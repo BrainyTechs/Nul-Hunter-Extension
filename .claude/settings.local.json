@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd \"C:/Murat Bilginer/OneDrive/Desktop/Test/nul\")",
+      "Bash(dd if=/dev/zero of=\"C:/Murat Bilginer/OneDrive/Desktop/Test/nul_test_file.bin\" bs=1024 count=1)",
+      "Bash(xxd \"C:/Murat Bilginer/OneDrive/Desktop/Test/nul_test_file.bin\")",
+      "Bash(vsce --version)"
+    ]
+  }
+}

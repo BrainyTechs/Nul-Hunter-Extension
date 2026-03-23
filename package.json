@@ -1,0 +1,66 @@
+{
+  "name": "nul-hunter",
+  "displayName": "Nul Hunter",
+  "description": "VS Code extension that finds and removes NUL (null byte) files from your projects",
+  "version": "1.0.0",
+  "publisher": "BrainyTech",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuratBilginerSoft/Nul-Hunter-Extension"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nulhunter.cleanNulFiles",
+        "title": "Nul Hunter: Clean NUL Files"
+      },
+      {
+        "command": "nulhunter.findNulFiles",
+        "title": "Nul Hunter: Find NUL Files"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "nulhunter.cleanNulFiles",
+          "group": "2_workspace",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "nulhunter.cleanNulFiles",
+          "when": "true"
+        },
+        {
+          "command": "nulhunter.findNulFiles",
+          "when": "true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.21.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
